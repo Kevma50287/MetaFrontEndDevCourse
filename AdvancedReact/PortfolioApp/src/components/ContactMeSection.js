@@ -43,7 +43,7 @@ const LandingSection = () => {
     if (response?.type === "success") {
       onOpen(response?.type, "Thank you for your submission")
       formik.resetForm()
-    } else {
+    } else if (response?.type === "error"){
       onOpen(response?.type, "Something went wrong, please try again later!")
     }
   }, [response])
